@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         "@": '../client'
     },
     dir: {
-        pages: './client/app/routes',
+        pages: './client/pages',
         layouts: './client/app/layouts',
     }
 })

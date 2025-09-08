@@ -4,7 +4,13 @@ import {HomePage} from "@/pages/home";
 </script>
 
 <template>
-  <HomePage/>
+  <div>
+    APP
+    <NuxtRouteAnnouncer/>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
+  </div>
 </template>
 
 <style scoped>
