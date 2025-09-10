@@ -1,0 +1,1 @@
+### https://nuxt.com/raw/docs/4.x/guide/directory-structure/app/plugins.md
