@@ -2,11 +2,9 @@
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: {enabled: true},
-    alias: {
-        "@": '../client'
-    },
     dir: {
-        pages: './client/pages',
-        layouts: './client/app/layouts',
+        app: 'client/app',
+        pages: 'client/app/routes',
+        layouts: 'client/app/layouts',
     }
 })

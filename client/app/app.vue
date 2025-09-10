@@ -1,11 +1,9 @@
 <script setup lang="ts">
-
-import {HomePage} from "@/pages/home";
+console.log('test123')
 </script>
 
 <template>
   <div>
-    APP
     <NuxtRouteAnnouncer/>
     <NuxtLayout>
       <NuxtPage/>
