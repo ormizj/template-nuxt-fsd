@@ -4,7 +4,8 @@
 
 <template>
   <dd>
-    <h3>Welcome</h3>
+    <h2>Layout</h2>
+    <slot/>
   </dd>
 </template>
 
