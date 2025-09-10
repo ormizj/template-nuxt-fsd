@@ -5,12 +5,12 @@ console.log('Running "app.vue"')
 <template>
   <div>
     <NuxtRouteAnnouncer/>
-    <dt>
+    <dl>
       <h1>App</h1>
-    </dt>
-    <NuxtLayout>
-      <NuxtPage/>
-    </NuxtLayout>
+      <NuxtLayout>
+        <NuxtPage/>
+      </NuxtLayout>
+    </dl>
   </div>
 </template>
 

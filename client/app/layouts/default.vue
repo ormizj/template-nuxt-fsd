@@ -5,7 +5,9 @@
 <template>
   <dd>
     <h2>Layout</h2>
-    <slot/>
+    <dl>
+      <slot/>
+    </dl>
   </dd>
 </template>
 
