@@ -1,5 +1,5 @@
 <script setup lang="ts">
-console.log('Running "app.vue"')
+console.log('✅ Running "app.vue"')
 </script>
 
 <template>
@@ -25,5 +25,9 @@ console.log('Running "app.vue"')
 body {
   background-color: rgb(25, 25, 25);
   color: rgb(225, 225, 225);
+}
+
+a:-webkit-any-link {
+  color: rgb(150, 255, 150);
 }
 </style>
