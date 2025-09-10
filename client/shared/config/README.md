@@ -1,0 +1,1 @@
+### environment variables, global feature flags and other global configuration for your app
