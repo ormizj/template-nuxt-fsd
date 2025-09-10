@@ -3,18 +3,9 @@
 </script>
 
 <template>
-  <div>
-    testNuxt3
-    testNuxt3
-    testNuxt3
-    testNuxt3
-    testNuxt31
-    testNuxt3
-    testNuxt3
-    testNuxt3
-    testNuxt3
-    testNuxt3
-  </div>
+  <dd>
+    <h3>Home</h3>
+  </dd>
 </template>
 
 <style scoped>

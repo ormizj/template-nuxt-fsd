@@ -1,0 +1,1 @@
+export {default} from '@/../pages/welcome/index.js'
