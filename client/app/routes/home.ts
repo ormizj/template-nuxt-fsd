@@ -1,1 +1,1 @@
-export {default} from '@/../pages/home/index.js'
+export {default} from '@/pages/home/index.js'
