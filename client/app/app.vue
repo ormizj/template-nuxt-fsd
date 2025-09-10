@@ -3,15 +3,13 @@ console.log('Running "app.vue"')
 </script>
 
 <template>
-  <div>
+  <dl>
     <NuxtRouteAnnouncer/>
-    <dl>
-      <h1>App</h1>
-      <NuxtLayout>
-        <NuxtPage/>
-      </NuxtLayout>
-    </dl>
-  </div>
+    <h1>App</h1>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
+  </dl>
 </template>
 
 <style scoped>
