@@ -1,1 +1,0 @@
-export type {B} from '../../b/model/B';

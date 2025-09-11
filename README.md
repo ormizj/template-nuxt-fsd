@@ -96,10 +96,10 @@ entity B needs to import from entity A, then entity A can declare a separate pub
 - 📂 `entities`
     - 📂 `A`
         - 📂 `@x`
-            - 📄 `B.ts` — a special public API just for code inside entities/B/
+            - 📄 `A.ts` — a special public API just for code inside entities/B/
         - 📄 `index.ts` — the regular public API
 
-Then the code inside entities/B/ can import from entities/A/@x/B:
+Then the code inside `entities/B/` can import from `entities/A/@x/B`:
 
 ```ts
 import type {EntityA} from "entities/A/@x/B";

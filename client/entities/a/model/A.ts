@@ -1,4 +1,4 @@
-import type {B} from '../@x/B';
+import type {B} from '../../b';
 
 export interface A {
     b: B,
