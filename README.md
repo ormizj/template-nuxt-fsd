@@ -82,8 +82,8 @@ In practice, it's usually implemented as an **index** file with re-exports:
 
 ### [Public API for cross-imports](https://feature-sliced.design/docs/reference/public-api#public-api-for-cross-imports)
 
-Public API for cross-imports
-Cross-imports are a situation when one slice imports from another slice on the same layer. Usually that is prohibited by
+Cross-imports are a situation when one slice imports from another slice on the same layer. Usually that
+is prohibited by
 the [import rule on layers](https://feature-sliced.design/docs/reference/layers#import-rule-on-layers), but often there
 are legitimate reasons to cross-import. For example, business entities
 often
