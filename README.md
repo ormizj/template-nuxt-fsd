@@ -37,7 +37,7 @@ _modules on one layer can only know about and import from modules from the layer
 5. **Entities**
 6. **Shared**
 
-> ### [Slices](https://feature-sliced.design/docs/reference/slices-segments#slices):
+> ### [Slices](https://feature-sliced.design/docs/reference/slices-segments#slices)
 
 Slices are the **SECOND** level in the organizational hierarchy of Feature-Sliced Design. Their main purpose is to group
 code by its meaning for the product, business, or just the application.
@@ -50,7 +50,7 @@ The layers Shared and App don't contain slices. That is because Shared should co
 has no meaning for the product, and App should contain only code that concerns the entire application, so no splitting
 is necessary.
 
-> ### [Segments](https://feature-sliced.design/docs/reference/slices-segments#segments):
+> ### [Segments](https://feature-sliced.design/docs/reference/slices-segments#segments)
 
 Segments are the third and **FINAL** level in the organizational hierarchy, and their purpose is to group code by its
 technical nature.
