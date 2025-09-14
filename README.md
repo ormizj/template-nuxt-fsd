@@ -1,6 +1,6 @@
 # template-nuxt-fsd
 
-A nuxt.js - V4 template, implementing the [Feature-Sliced Design](https://feature-sliced.design/) architecture
+A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.design/) architecture
 
 ## Key Concepts
 
