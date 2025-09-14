@@ -2,6 +2,17 @@
 
 A nuxt.js - V4 template, implementing the [Feature-Sliced Design](https://feature-sliced.design/) architecture
 
+## Key Concepts
+
+--- WIP
+
+- Imports...
+- Limited Nesting...
+- Navigation... (Names like “components”, “hooks”, “modals” should not be used because they describe what these files
+  are, but don’t help to navigate the code inside.)
+
+--- WIP
+
 ## Levels
 
 There are 3 nesting levels in the application:
@@ -30,12 +41,15 @@ features, entities, shared.
 
 _modules on one layer can only know about and import from modules from the layers strictly below._
 
-1. **App**
+1. **_App_***
 2. **Pages**
 3. **Widgets**
 4. **Features**
 5. **Entities**
-6. **Shared**
+6. **_Shared_***
+
+*_App & Shared: are different from other layers in the sense that they contain segments, not slices. In this way, the
+App & Shared layers can be thought of as a hybrid between a layer and a slice._
 
 > ### [Slices](https://feature-sliced.design/docs/reference/slices-segments#slices)
 
