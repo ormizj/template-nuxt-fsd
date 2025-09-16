@@ -12,7 +12,7 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 - Limited Nesting (Shared excluded)...
 - Navigation... (Names like “components”, “hooks”, “modals” should not be used because they describe what these files
   are, but don’t help to navigate the code inside.)
-- single exports (public api)
+- single exports (public api) (except for "shared" segments)
 
 --- WIP
 
@@ -137,3 +137,28 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
   as opposed to defining one single index of everything in Shared.
 - Shared is different from other layers in the sense that it contains segments, not slices. In this way, the Shared
   layer can be thought of as a hybrid between a layer and a slice.
+
+### To Read
+
+- ~~Overview~~
+- ~~Tutorial~~
+- ~~FAQ~~
+- Examples
+    - Authentication
+    - Types
+    - Page layouts
+    - Handling API Requests
+- Migration
+    - From a custom architecture
+    - Migration from v1 to v2
+    - Migration from v2.0 to v2.1
+- Layers
+- Slices and segments
+- Public API
+- Mission
+- Motivation
+- Understanding
+    - About architecture
+    - Needs driven
+    - Knowledge types
+    - Naming

@@ -1,1 +1,1 @@
-### global store configuration
+### global store configuration, does NOT include store implementations, e.g. authStore
