@@ -2,6 +2,8 @@
 
 A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.design/) architecture
 
+---
+
 ## Key Concepts
 
 - Imports - **Layers** and **Slices** can only import from layers below them _(see Layer Hierarchy)_, <br>
@@ -15,6 +17,8 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 - single exports (public api) (except for "shared" segments)
 
 --- WIP
+
+---
 
 ## Levels
 
@@ -129,6 +133,8 @@ import type {EntityA} from "entities/A/@x/B";
 
 The notation `A/@x/B` is meant to be read as "A crossed with B".
 
+---
+
 ## Further Notes
 
 ### Shared
@@ -138,27 +144,57 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
 - Shared is different from other layers in the sense that it contains segments, not slices. In this way, the Shared
   layer can be thought of as a hybrid between a layer and a slice.
 
-### To Read
+### [Utility Types](https://feature-sliced.design/docs/guides/examples/types#utility-types)
 
-- ~~Overview~~
-- ~~Tutorial~~
-- ~~FAQ~~
-- Examples
-    - Authentication
-    - Types
-    - Page layouts
-    - Handling API Requests
-- Migration
-    - From a custom architecture
-    - Migration from v1 to v2
-    - Migration from v2.0 to v2.1
-- Layers
-- Slices and segments
-- Public API
-- Mission
-- Motivation
-- Understanding
-    - About architecture
-    - Needs driven
-    - Knowledge types
-    - Naming
+Utility types are types that don't have much meaning on their own and are usually used with other types. For example:
+
+```ts
+type ArrayValues<T extends readonly unknown[]> = T[number];
+```
+
+To make utility types available across your project, either install a library like type-fest, or create your own library
+in `shared/lib`. Make sure to clearly indicate what new types should be added to this library, and what types don't
+belong
+there. For example, call it `shared/lib/utility-types` and add a README inside that describes what is a utility type in
+your team.
+
+Don't overestimate the potential reusability of a utility type. Just because it can be reused, doesn't mean it will be,
+and as such, not every utility type needs to be in Shared. Some utility types are fine right next to where they are
+needed:
+
+- 📂 pages
+    - 📂 home
+        - 📂 api
+            - 📄 ArrayValues.ts (utility type)
+            - 📄 getMemoryUsageMetrics.ts (the code that uses the utility type)
+
+---
+
+## To Read
+
+- 🚀 Get Started
+    - ~~Overview~~
+    - ~~Tutorial~~
+    - ~~FAQ~~
+- 🎯 Guides
+    - Examples
+        - ~~Authentication~~
+        - Types
+        - Page layouts
+        - Handling API Requests
+    - Migration
+        - From a custom architecture
+        - Migration from v1 to v2
+        - Migration from v2.0 to v2.1
+- 📚 Reference
+    - Layers
+    - Slices and segments
+    - Public API
+- 🍰 About
+    - Mission
+    - Motivation
+    - Understanding
+        - About architecture
+        - Needs driven
+        - Knowledge types
+        - Naming
