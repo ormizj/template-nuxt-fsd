@@ -6,10 +6,11 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 
 --- WIP
 
-- Imports...
-- Limited Nesting...
+- Imports... (segments are allowed to import from siblings, slices are not allowed (see cross-imports section))
+- Limited Nesting (Shared excluded)...
 - Navigation... (Names like “components”, “hooks”, “modals” should not be used because they describe what these files
   are, but don’t help to navigate the code inside.)
+- single exports (public api)
 
 --- WIP
 
@@ -41,15 +42,15 @@ features, entities, shared.
 
 _modules on one layer can only know about and import from modules from the layers strictly below._
 
-1. **_App_***
-2. **Pages**
-3. **Widgets**
-4. **Features**
-5. **Entities**
-6. **_Shared_***
+1. **_App_*** - everything that makes the app run — routing, entrypoints, global styles, providers.
+2. **Pages** - full pages or large parts of a page in nested routing.
+3. **Widgets** - large self-contained chunks of functionality or UI, usually delivering an entire use case.
+4. **Features** - reused implementations of entire product features, i.e. actions that bring business value to the user.
+5. **Entities** - business entities that the project works with, like `user` or `product`.
+6. **_Shared_*** - reusable functionality, especially when it's detached from the specifics of the project/business,
+   though not necessarily.
 
-*_App & Shared: are different from other layers in the sense that they contain segments, not slices. In this way, the
-App & Shared layers can be thought of as a hybrid between a layer and a slice._
+*_App & Shared: Layers App and Shared, unlike other layers, do not have slices and are divided into segments directly._
 
 > ### [Slices](https://feature-sliced.design/docs/reference/slices-segments#slices)
 
@@ -120,3 +121,10 @@ import type {EntityA} from "entities/A/@x/B";
 ```
 
 The notation `A/@x/B` is meant to be read as "A crossed with B".
+
+### Shared
+
+- For the Shared layer that has no slices, it’s usually more convenient to define a separate public API for each segment
+  as opposed to defining one single index of everything in Shared.
+- Shared is different from other layers in the sense that it contains segments, not slices. In this way, the Shared
+  layer can be thought of as a hybrid between a layer and a slice.
