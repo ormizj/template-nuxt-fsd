@@ -129,6 +129,8 @@ import type {EntityA} from "entities/A/@x/B";
 
 The notation `A/@x/B` is meant to be read as "A crossed with B".
 
+## Further Notes
+
 ### Shared
 
 - For the Shared layer that has no slices, it’s usually more convenient to define a separate public API for each segment
