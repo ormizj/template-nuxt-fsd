@@ -4,9 +4,11 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 
 ## Key Concepts
 
+- Imports - **Layers** and **Slices** can only import from layers below them _(see Layer Hierarchy)_, <br>
+  while **Segments** are allowed to import from siblings _(see Segments)_
+
 --- WIP
 
-- Imports... (segments are allowed to import from siblings, slices are not allowed (see cross-imports section))
 - Limited Nesting (Shared excluded)...
 - Navigation... (Names like “components”, “hooks”, “modals” should not be used because they describe what these files
   are, but don’t help to navigate the code inside.)
@@ -69,6 +71,11 @@ is necessary.
 
 Segments are the third and **FINAL** level in the organizational hierarchy, and their purpose is to group code by its
 technical nature.
+
+Unlike slices, where imports between siblings are restricted, segments within the same slice are allowed to import
+from their siblings.
+This flexibility exists because segments are not business units but technical subdivisions of a slice, and they often
+need to cooperate closely.
 
 There a few standardized segment names:
 
