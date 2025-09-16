@@ -144,7 +144,9 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
 - Shared is different from other layers in the sense that it contains segments, not slices. In this way, the Shared
   layer can be thought of as a hybrid between a layer and a slice.
 
-### [Utility Types](https://feature-sliced.design/docs/guides/examples/types#utility-types)
+## Types
+
+#### [Utility Types](https://feature-sliced.design/docs/guides/examples/types#utility-types)
 
 Utility types are types that don't have much meaning on their own and are usually used with other types. For example:
 
@@ -167,6 +169,27 @@ needed:
         - 📂 api
             - 📄 ArrayValues.ts (utility type)
             - 📄 getMemoryUsageMetrics.ts (the code that uses the utility type)
+
+#### [Ambient declaration files (*.d.ts)](https://feature-sliced.design/docs/guides/examples/types#ambient-declaration-files-dts)
+
+Some packages, for example, [Vite](https://vitejs.dev/) or [ts-reset](https://www.totaltypescript.com/ts-reset), require
+ambient declaration files to work
+across your app. Usually,
+they
+aren't large or complicated, so they often don't require any architecting, it's fine to just throw them in the `src/`
+folder. To keep the `src` more organized, you can keep them on the App layer, in `app/ambient/`.
+
+Other packages simply don't have typings, and you might want to declare them as untyped or even write your own typings
+for them. A good place for those typings would be `shared/lib`, in a folder like `shared/lib/untyped-packages`. Create a
+`%LIBRARY_NAME%.d.ts` file there and declare the types you need:
+
+>
+>`shared/lib/untyped-packages/use-react-screenshot.d.ts`
+>
+>```ts 
+>// This library doesn't have typings, and we didn't want to bother writing our own.
+>declare module "use-react-screenshot";
+>```
 
 ---
 
