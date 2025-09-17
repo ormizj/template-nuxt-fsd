@@ -6,12 +6,13 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 
 ## Key Concepts
 
-- Imports - **Layers** and **Slices** can only import from layers below them _(see Layer Hierarchy)_, <br>
-  while **Segments** are allowed to import from siblings _(see Segments)_
+- Imports - **Layers** and **Slices** may only import from layers below them _(see Layer Hierarchy)_. <br>
+  **Segments**, however, are allowed to import from their siblings _(see Segments)_.
+- Nesting - Most **Layers** should be limited to **3 levels of nesting** _(Layer > Slice > Segment)_. <br>
+  The **App** and **Shared** layers can exceed this limit due to their unique rules.
 
 --- WIP
 
-- Limited Nesting (Shared excluded)...
 - Navigation... (Names like “components”, “hooks”, “modals” should not be used because they describe what these files
   are, but don’t help to navigate the code inside.)
 - single exports (public api) (except for "shared" segments)
@@ -202,8 +203,8 @@ for them. A good place for those typings would be `shared/lib`, in a folder like
 - 🎯 Guides
     - Examples
         - ~~Authentication~~
-        - Types
-        - Page layouts
+        - ~~Types~~
+        - ~~Page layouts~~
         - Handling API Requests
     - Migration
         - From a custom architecture
