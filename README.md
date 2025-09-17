@@ -144,10 +144,13 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
 
 ### Shared
 
-- For the Shared layer that has no slices, it’s usually more convenient to define a separate public API for each segment
+- For the Shared layer that has no slices, it’s usually more convenient to define a **separate public API for each
+  segment**
   as opposed to defining one single index of everything in Shared.
-- Shared is different from other layers in the sense that it contains segments, not slices. In this way, the Shared
+- Shared is different from other layers in the sense that it **contains segments, not slices.** In this way, the Shared
   layer can be thought of as a hybrid between a layer and a slice.
+- Slices are intended to divide the layer into business domains, but business domains do not exist in Shared. This means
+  that **all files in Shared can reference and import from each other.**
 
 ## Types
 
