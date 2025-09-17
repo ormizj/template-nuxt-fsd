@@ -6,18 +6,22 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 
 ## Key Concepts
 
-- Imports - **Layers** and **Slices** may only import from layers below them _(see Layer Hierarchy)_. <br>
+- Import - **Layers** and **Slices** may only import from layers below them _(see Layer Hierarchy)_. <br>
   **Segments**, however, are allowed to import from their siblings _(see Segments)_.
+
+
+- Export - Exports to external modules should be from a **public API**, which serves as a contract between a group of
+  modules (**slices**/**segments**), and the code that uses it. <br>
+  It also acts as a gate, only allowing access to certain objects, and only through that public API _(see Public API)_.
+
+
 - Nesting - Most **Layers** should be limited to **3 levels of nesting** _(Layer > Slice > Segment)_. <br>
-  The **App** and **Shared** layers can exceed this limit due to their unique rules.
+  The **App** and **Shared** layers can exceed this limit due to their unique rules _(see Levels)_.
 
---- WIP
 
-- Navigation... (Names like “components”, “hooks”, “modals” should not be used because they describe what these files
-  are, but don’t help to navigate the code inside.)
-- single exports (public api) (except for "shared" segments)
-
---- WIP
+- Navigation - When creating new **segments** is that segment names should describe **purpose (the "why")**, not essence
+  **(the "what")**. Avoid like “components”, “hooks”, “modals”, since they describe what these files
+  are, but don’t help to navigate the code inside _(see Levels)_
 
 ---
 
@@ -205,11 +209,9 @@ for them. A good place for those typings would be `shared/lib`, in a folder like
         - ~~Authentication~~
         - ~~Types~~
         - ~~Page layouts~~
-        - Handling API Requests
+        - ~~Handling API Requests~~
     - Migration
-        - From a custom architecture
-        - Migration from v1 to v2
-        - Migration from v2.0 to v2.1
+        - ~~From a custom architecture~~
 - 📚 Reference
     - Layers
     - Slices and segments
