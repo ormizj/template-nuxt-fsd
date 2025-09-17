@@ -11,7 +11,7 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 
 
 - Export - Exports to external modules should be from a **public API**, which serves as a contract between a group of
-  modules (**slices**/**segments**), and the code that uses it. <br>
+  modules (files), and the code that uses it. <br>
   It also acts as a gate, only allowing access to certain objects, and only through that public API _(see Public API)_.
 
 
@@ -143,6 +143,11 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
 
 ## Further Notes
 
+### App
+
+- App doesn't contain slices, App should contain only code that concerns the **entire application**, so no splitting is
+  necessary.
+
 ### Shared
 
 - For the Shared layer that has no slices, it’s usually more convenient to define a **separate public API for each
@@ -152,6 +157,8 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
   layer can be thought of as a hybrid between a layer and a slice.
 - Slices are intended to divide the layer into business domains, but business domains do not exist in Shared. This means
   that **all files in Shared can reference and import from each other.**
+- Shared doesn't contain slices. That is because Shared should contain **no business** logic at all, hence has no
+  meaning for the product.
 
 ## Types
 
@@ -202,7 +209,7 @@ for them. A good place for those typings would be `shared/lib`, in a folder like
 
 ---
 
-## To Read
+## [To Read](https://feature-sliced.design/docs/)
 
 - 🚀 Get Started
     - ~~Overview~~
