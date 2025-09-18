@@ -164,6 +164,19 @@ Imports should be done by:
 - When they are in the same slice, always use **relative imports** and write the full import path
 - When they are in different slices, always use **absolute imports**, for example, with an alias
 
+#### App and Shared
+
+And If your bundles in App or Shared grow undesirably due to a single public API in `shared/ui` or `shared/lib`, it's
+recommended to
+instead
+have a separate index file for each component or library:
+
+- `shared/ui/`
+    - `button`
+        - `index.js`
+    - `text-field`
+        - `index.js`
+
 ### [Public API for cross-imports](https://feature-sliced.design/docs/reference/public-api#public-api-for-cross-imports)
 
 Cross-imports are a situation when one slice imports from another slice on the same layer. Usually that
