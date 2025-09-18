@@ -66,24 +66,24 @@ _modules on one layer can only know about and import from modules from the layer
 
 *_The most common places for custom segments are the App layer and the Shared layer, where slices don't make sense._
 
-#### 1. App
+#### 1. [App](https://feature-sliced.design/docs/reference/layers#app)
 
 All kinds of app-wide matters, both in the technical sense (e.g., context providers) and in the business sense (e.g.,
 analytics).This layer usually doesn't contain slices, as well as Shared, instead having segments directly.
 
-#### 2. Pages
+#### 2. [Pages](https://feature-sliced.design/docs/reference/layers#pages)
 
 Pages are what makes up websites and applications (also known as screens or activities). One page usually corresponds to
 one slice, however, if there are several very similar pages, they can be grouped into one slice, for example,
 registration and login forms.
 
-#### 3. Widgets
+#### 3. [Widgets](https://feature-sliced.design/docs/reference/layers#widgets)
 
 The Widgets layer is intended for large self-sufficient blocks of UI. Widgets are most useful when they are reused
 across multiple pages, or when the page that they belong to has multiple large independent blocks, and this is one of
 them.
 
-#### 4. Features
+#### 4. [Features](https://feature-sliced.design/docs/reference/layers#features)
 
 This layer is for the main interactions in your app, things that your users care to do. These interactions often involve
 business entities, because that's what the app is about.
@@ -91,13 +91,13 @@ business entities, because that's what the app is about.
 - There can be no "map-office" feature
     - But `booking-meeting-on-the-map`, `search-for-an-employee`, `change-of-workplace` - yes
 
-#### 5. Entities
+#### 5. [Entities](https://feature-sliced.design/docs/reference/layers#entities)
 
 Slices on this layer represent concepts from the real world that the project is working with. Commonly, they are the
 terms that the business uses to describe the product. For example, a social network might work with business entities
 like User, Post, and Group.
 
-#### 6. Shared
+#### 6. [Shared](https://feature-sliced.design/docs/reference/layers#shared)
 
 This layer forms a foundation for the rest of the app. It's a place to create connections with the external world, for
 example, backends, third-party libraries, the environment. It is also a place to define your own highly contained
@@ -229,7 +229,7 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
 - Shared doesn't contain slices. That is because Shared should contain **no business** logic at all, hence has no
   meaning for the product.
 
-## Types
+### [Types](https://feature-sliced.design/docs/guides/examples/types)
 
 #### [Utility Types](https://feature-sliced.design/docs/guides/examples/types#utility-types)
 
@@ -276,6 +276,26 @@ for them. A good place for those typings would be `shared/lib`, in a folder like
 >declare module "use-react-screenshot";
 >```
 
+### [Naming Conflicts](https://feature-sliced.design/docs/about/understanding/naming#when-can-naming-interfere)
+
+Naming conflicts can occur when terms used in the FSD methodology overlap with terms used in the business:
+
+- `FSD#process` vs simulated process in an application,
+- `FSD#page` vs log page,
+- `FSD#model` vs car model.
+  For example, a developer who sees the word "process" in the code will spend extra time trying to figure out what
+  process is meant. **Such collisions can disrupt the development process.**
+
+When the project glossary contains terminology specific to FSD, it is critical to be careful when discussing these terms
+with the team and technical disinterested parties.
+
+To communicate effectively with the team, it is recommended that the abbreviation "FSD" be used to prefix the
+methodology terms. For example, when talking about a process, you might say, "We can put this process on the FSD
+features layer."
+
+Conversely, when communicating with non-technical stakeholders, it is better to limit the use of FSD terminology and
+refrain from mentioning the internal structure of the code base.
+
 ---
 
 ## [To Read](https://feature-sliced.design/docs/)
@@ -301,6 +321,6 @@ for them. A good place for those typings would be `shared/lib`, in a folder like
     - ~~Motivation~~
     - Understanding
         - ~~About architecture~~
-        - Needs driven
-        - Knowledge types
+        - ~~Needs driven~~
+        - ~~Knowledge types~~
         - Naming
