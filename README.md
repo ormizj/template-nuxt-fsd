@@ -64,10 +64,49 @@ _modules on one layer can only know about and import from modules from the layer
 
 *_App & Shared: Layers App and Shared, unlike other layers, do not have slices and are divided into segments directly._
 
+*_The most common places for custom segments are the App layer and the Shared layer, where slices don't make sense._
+
+#### 1. App
+
+All kinds of app-wide matters, both in the technical sense (e.g., context providers) and in the business sense (e.g.,
+analytics).This layer usually doesn't contain slices, as well as Shared, instead having segments directly.
+
+#### 2. Pages
+
+Pages are what makes up websites and applications (also known as screens or activities). One page usually corresponds to
+one slice, however, if there are several very similar pages, they can be grouped into one slice, for example,
+registration and login forms.
+
+#### 3. Widgets
+
+The Widgets layer is intended for large self-sufficient blocks of UI. Widgets are most useful when they are reused
+across multiple pages, or when the page that they belong to has multiple large independent blocks, and this is one of
+them.
+
+#### 4. Features
+
+This layer is for the main interactions in your app, things that your users care to do. These interactions often involve
+business entities, because that's what the app is about.
+
+#### 5. Entities
+
+Slices on this layer represent concepts from the real world that the project is working with. Commonly, they are the
+terms that the business uses to describe the product. For example, a social network might work with business entities
+like User, Post, and Group.
+
+#### 6. Shared
+
+This layer forms a foundation for the rest of the app. It's a place to create connections with the external world, for
+example, backends, third-party libraries, the environment. It is also a place to define your own highly contained
+libraries.
+
+
+
 > ### [Slices](https://feature-sliced.design/docs/reference/slices-segments#slices)
 
 Slices are the **SECOND** level in the organizational hierarchy of Feature-Sliced Design. Their main purpose is to group
-code by its meaning for the product, business, or just the application.
+code by its meaning for the product, business, or just the application, they are meant to be independent and highly
+cohesive groups of code files.
 
 The names of slices are not standardized because they are directly determined by the business domain of your
 application. For example, a photo gallery might have slices photo, effects, gallery-page. A social network would require
@@ -112,6 +151,19 @@ In practice, it's usually implemented as an **index** file with re-exports:
 >export {RegisterPage} from "./ui/RegisterPage";
 >```
 
+A good public API makes using and integrating into other code a slice convenient and reliable. It can be achieved by
+setting these three goals:
+
+1. The rest of the application must be protected from structural changes to the slice, like a refactoring
+2. Significant changes in the behavior of the slice that break the previous expectations should cause changes in the
+   public API
+3. Only the necessary parts of the slice should be exposed
+
+Imports should be done by:
+
+- When they are in the same slice, always use **relative imports** and write the full import path
+- When they are in different slices, always use **absolute imports**, for example, with an alias
+
 ### [Public API for cross-imports](https://feature-sliced.design/docs/reference/public-api#public-api-for-cross-imports)
 
 Cross-imports are a situation when one slice imports from another slice on the same layer. Usually that
@@ -147,6 +199,7 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
 
 - App doesn't contain slices, App should contain only code that concerns the **entire application**, so no splitting is
   necessary.
+- Since slices don't exist in the App, **all files in App can reference and import from each other.**
 
 ### Shared
 
@@ -225,7 +278,7 @@ for them. A good place for those typings would be `shared/lib`, in a folder like
         - ~~From a custom architecture~~
 - 📚 Reference
     - ~~Layers~~
-    - Slices and segments
+    - ~~Slices and segments~~
     - Public API
 - 🍰 About
     - Mission
