@@ -323,4 +323,4 @@ refrain from mentioning the internal structure of the code base.
         - ~~About architecture~~
         - ~~Needs driven~~
         - ~~Knowledge types~~
-        - Naming
+        - ~~Naming~~
