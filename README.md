@@ -6,22 +6,22 @@ A nuxt.js - V4 template, using [Feature-Sliced Design](https://feature-sliced.de
 
 ## Key Concepts
 
-- Import - **Layers** and **Slices** may only import from layers below them _(see Layer Hierarchy)_. <br>
-  **Segments**, however, are allowed to import from their siblings _(see Segments)_.
+- Import - **Layers** and **Slices** may only import from layers below them _(see: Layer Hierarchy)_. <br>
+  **Segments**, however, are allowed to import from their siblings _(see: Segments)_.
 
 
 - Export - Exports to external modules should be from a **public API**, which serves as a contract between a group of
   modules (files), and the code that uses it. <br>
-  It also acts as a gate, only allowing access to certain objects, and only through that public API _(see Public API)_.
+  It also acts as a gate, only allowing access to certain objects, and only through that public API _(see: Public API)_.
 
 
 - Nesting - Most **Layers** should be limited to **3 levels of nesting** _(Layer > Slice > Segment)_. <br>
-  The **App** and **Shared** layers can exceed this limit due to their unique rules _(see Levels)_.
+  The **App** and **Shared** layers can exceed this limit due to their unique rules _(see: Levels)_.
 
 
 - Navigation - When creating new **segments** is that segment names should describe **purpose (the "why")**, not essence
   **(the "what")**. Avoid like “components”, “hooks”, “modals”, since they describe what these files
-  are, but don’t help to navigate the code inside _(see Levels)_
+  are, but don’t help to navigate the code inside _(see: Levels)_
 
 ---
 
@@ -169,10 +169,13 @@ Imports should be done by:
 
 #### App and Shared
 
-And If your bundles in App or Shared grow undesirably due to a single public API in `shared/ui` or `shared/lib`, it's
-recommended to
-instead
-have a separate index file for each component or library:
+Public APIs in App and Shared should avoid exposing too many exports at once.
+Otherwise, they may inherit the same drawbacks as
+[Barrel Files](https://tkdodo.eu/blog/please-stop-using-barrel-files)
+(e.g., slower development, unclear dependencies).
+
+And if a single public API in App or Shared (e.g. `shared/ui` or `shared/lib`) starts causing large or unwanted bundles,
+prefer creating a dedicated index file for each component or library instead:
 
 - `shared/ui/`
     - `button`
