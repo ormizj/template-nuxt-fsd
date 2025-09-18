@@ -88,6 +88,9 @@ them.
 This layer is for the main interactions in your app, things that your users care to do. These interactions often involve
 business entities, because that's what the app is about.
 
+- There can be no "map-office" feature
+    - But `booking-meeting-on-the-map`, `search-for-an-employee`, `change-of-workplace` - yes
+
 #### 5. Entities
 
 Slices on this layer represent concepts from the real world that the project is working with. Commonly, they are the
@@ -292,12 +295,12 @@ for them. A good place for those typings would be `shared/lib`, in a folder like
 - 📚 Reference
     - ~~Layers~~
     - ~~Slices and segments~~
-    - Public API
+    - ~~Public API~~
 - 🍰 About
-    - Mission
-    - Motivation
+    - ~~Mission~~
+    - ~~Motivation~~
     - Understanding
-        - About architecture
+        - ~~About architecture~~
         - Needs driven
         - Knowledge types
         - Naming
