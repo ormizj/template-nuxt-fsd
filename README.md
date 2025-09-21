@@ -216,16 +216,16 @@ The notation `A/@x/B` is meant to be read as "A crossed with B".
 
 ### App
 
-- In the App layer, segments (like `routes`, `store`, `entrypoint`, etc.) may import from their siblings directly;
-  you shouldn’t use the `@x` notation.
+- In the App layer, segments (like `routes`, `store`, `entrypoint`, etc.) may import from their siblings directly (not
+  using their public APIs); you shouldn’t use the `@x` notation.
 - App doesn't contain slices, App should contain only code that concerns the **entire application**, so no splitting is
   necessary.
 - Since slices don't exist in the App, **all files in App can reference and import from each other.**
 
 ### Shared
 
-- In the Shared layer, segments (like `api`, `ui`, `lib`, etc.) may import from their siblings directly;
-  you shouldn’t use the `@x` notation.
+- In the Shared layer, segments (like `api`, `ui`, `lib`, etc.) may import from their siblings directly (not using their
+  public APIs); you shouldn’t use the `@x` notation.
 - For the Shared layer that has no slices, it’s usually more convenient to define a **separate public API for each
   segment**
   as opposed to defining one single index of everything in Shared.
