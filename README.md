@@ -164,8 +164,9 @@ setting these three goals:
 
 Imports should be done by:
 
-- When they are in the same slice, always use **relative imports** and write the full import path
-- When they are in different slices, always use **absolute imports**, for example, with an alias
+- When they are in the same slice, always use **relative imports** and write the full import path (e.g. `../lib/data`)
+- When they are in different slices, always use **absolute imports**, for example, with an alias (
+  e.g. `@/shared/lib/data`)
 
 #### App and Shared
 
